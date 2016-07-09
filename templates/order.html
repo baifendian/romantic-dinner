@@ -2,49 +2,28 @@
 	<nav>
 	  <div class="nav-wrapper head">
 		<a href="javascript:" class="brand-logo left"><img class="logo" src="./images/logo.png"/></a>
-		<div style="text-align: center;font-size:1.3rem;">点菜</div>
-		<ul class="right" style="position: absolute;top: 0px;right: 0px;">
+		<div>点菜</div>
+		<ul class="right">
 		  <li><a href="#/orderinfo/{{orderId}}">返回</a></li>
 		</ul>
 	  </div>
 	</nav>
 </div>
-
 <div class="row">    
-	<!--
-	<div class="input-field col s12">
-	  <i class="material-icons prefix">account_circle</i>
-	  <input id="icon_prefix" type="text" ng-model="form.userName" class="validate">
-	  <label style="width: 50%;" for="icon_prefix" class="active">姓名</label>
-	</div>
-	<div class="input-field col s12">
-	  <i class="material-icons prefix">phone</i>
-	  <input id="icon_telephone" type="tel" ng-model="form.telphone" class="validate">
-	  <label style="width: 50%;" for="icon_telephone" class="active">联系电话</label>
-	</div>
-	-->
     <div class="input-field col s12" style="margin-top: 1rem;">
 	  <i class="material-icons prefix">restaurant</i>
 	  <input id="icon_prefix" type="text" ng-model="form.food" class="validate">
 	  <label style="width: 50%;" for="icon_prefix">菜品</label>
 	</div>
-	
-	<!--
-	<div class="input-field col s12">
-	  <i class="material-icons prefix">pages</i>
-	  <input id="icon_prefix" type="number" ng-model="form.packageFee" class="validate">
-	  <label style="width: 50%;" for="icon_prefix" class="active">餐盒费（元）</label>
-	</div>
-	-->
 	<div class="input-field col s12">
 	  <i class="material-icons prefix">exposure_plus_1</i>
 	  <input id="icon_prefix" value=1 type="number" ng-model="form.num" class="validate">
-	  <label style="width: 50%;" for="icon_prefix" class="active">份数</label>
+	  <label for="icon_prefix" class="active">份数</label>
 	</div>	
 	<div class="input-field col s12">
 	  <i class="material-icons prefix">attach_money</i>
 	  <input id="icon_prefix" type="number" ng-model="form.price" class="validate">
-	  <label style="width: 50%;" for="icon_prefix">单价（元）</label>
+	  <label for="icon_prefix">单价（元）</label>
 	</div>
 	<div class="row" ng-show="userFoodList.length>0">
 	  <div class="col s12">
@@ -61,19 +40,17 @@
 			<td>{{food.food}}</td>
 			<td>{{food.num}}</td>
 			<td>￥{{food.price}}</td>
-			<td><i style="color:red" class="material-icons prefix" ng-click="removeFood($index)">clear</i></td>
+			<td><i class="material-icons prefix" ng-click="removeFood($index)">clear</i></td>
 		  </tr>
 		  </tbody>
 
 		</table>
 	  </div>          
 	</div>
-	
-
 </div>
 <div class="row" style="text-align: center;">
-		<button class="btn-large waves-effect waves-light" ng-click="addFood()">&nbsp;&nbsp;点 菜&nbsp;&nbsp;</button>&nbsp;&nbsp;
-		<button class="btn-large waves-effect waves-light" ng-click="saveFoodAll()">&nbsp;&nbsp;约 单&nbsp;&nbsp;</button>
+	<button class="btn-large waves-effect waves-light" ng-click="addFood()">&nbsp;&nbsp;点 菜&nbsp;&nbsp;</button>&nbsp;&nbsp;
+	<button class="btn-large waves-effect waves-light" ng-click="saveFoodAll()">&nbsp;&nbsp;约 单&nbsp;&nbsp;</button>
 </div>
 
 	

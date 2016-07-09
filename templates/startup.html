@@ -2,8 +2,8 @@
 	<nav>
 	  <div class="nav-wrapper head">
 		<a href="javascript:" class="brand-logo left"><img class="logo" src="./images/logo.png"/></a>
-		<div style="text-align: center;font-size:1.3rem;">发起</div>
-		<ul class="right" style="position: absolute;top: 0px;right: 0px;">
+		<div>发起</div>
+		<ul class="right">
 		  <li><a href="#/home">返回</a></li>
 		</ul>
 	  </div>
@@ -14,25 +14,17 @@
     <div class="input-field col s12">
 	  <i class="material-icons prefix">store</i>
 	  <input id="icon_prefix" type="text" ng-model="form.shopName" class="validate">
-	  <label style="width: 50%;" for="icon_prefix">店铺名称</label>
+	  <label for="icon_prefix">店铺名称</label>
 	</div>
 	<div class="input-field col s12">
-		<i style="margin-top: 1rem;" class="material-icons prefix">cloud_circle</i>
+		<i class="material-icons prefix">cloud_circle</i>
 		<label for="icon_prefix" class="active">满减优惠</label>
-		<!--
-		<div style="margin: 1rem 3rem; float: left;padding-right: 3rem;">
-			<div ng-repeat="coupon in form.coupons" ng-click="removeCoupon(coupon)" style="margin-top:2px;background-color: #26a69a;" class="chip">{{coupon}}<i class="material-icons">close</i></div>
-		</div>
-		-->
-		<div style="margin: 1rem 3rem; float: left;width: 80%;">
+		<div>
 			<div ng-repeat="coupon in couponList" 
 				class="chip" 
-				style="{{coupon.isActive==true?'margin-top:2px;background-color: #26a69a;':'margin-top:2px;'}}"
 				ng-click="addCoupon(coupon)">{{coupon.price}}</div>
 		</div>	
 		<a href="javascript:" class="collection-item" ng-click="openMjyhModal()"><span class="new badge">添加</span></a>
-		 <!-- Modal Trigger -->
-		  <!-- Modal Structure -->
 		  <div id="modal2" class="modal bottom-sheet">
 			<div class="modal-content">
 				<div class="row">
@@ -52,22 +44,21 @@
 			  <a href="javascript:" ng-click="addCouponPrice()" class=" modal-action modal-close waves-effect waves-green btn-flat">确定</a>
 			</div>
 		  </div>
-	</div>
-	
+	</div>	
 	<div class="input-field col s12">
 	  <i class="material-icons prefix">restaurant</i>
 	  <input id="icon_prefix" type="text" ng-model="form.food" class="validate">
-	  <label style="width: 50%;" for="icon_prefix">菜品</label>
+	  <label for="icon_prefix">菜品</label>
 	</div>
 	<div class="input-field col s12">
 	  <i class="material-icons prefix">exposure_plus_1</i>
 	  <input id="icon_prefix" value=1 type="number" ng-model="form.num" class="validate">
-	  <label style="width: 50%;" for="icon_prefix" class="active">份数</label>
+	  <label for="icon_prefix" class="active">份数</label>
 	</div>	
 	<div class="input-field col s12">
 	  <i class="material-icons prefix">attach_money</i>
 	  <input id="icon_prefix" type="number" ng-model="form.price" class="validate">
-	  <label style="width: 50%;" for="icon_prefix">单价（元）</label>
+	  <label for="icon_prefix">单价（元）</label>
 	</div>
 	
 	<div class="input-field col s12">
@@ -77,32 +68,23 @@
 		<div class="input-field col s12">
 		  <i class="material-icons prefix">ring_volume</i>
 		  <input id="icon_prefix" type="number" ng-model="form.stepFee" class="validate">
-		  <label style="width: 50%;" for="icon_prefix" class="active">起送费（元）</label>
+		  <label for="icon_prefix" class="active">起送费（元）</label>
 		</div>
 		<div class="input-field col s12">
 		  <i class="material-icons prefix">motorcycle</i>
 		  <input id="icon_prefix" type="number" ng-model="form.outsideFee" class="validate">
-		  <label style="width: 50%;" for="icon_prefix" class="active">配送费（元）</label>
+		  <label for="icon_prefix" class="active">配送费（元）</label>
 		</div>
-		<!--
-		<div class="input-field col s12">
-		  <i class="material-icons prefix">mood</i>
-		  <input id="icon_prefix" type="text" ng-model="form.userName" class="validate">
-		  <label style="width: 50%;" for="icon_prefix">发起人</label>
-		</div>
-		-->
 		<div class="input-field col s12">
 		  <i class="material-icons prefix">access_time</i>
 		  <input type="time" name="time" ng-model="form.orderTime" class="validate" format-date>
-		  <label style="width: 50%;" for="icon_prefix" class="active">下单时间</label>
+		  <label for="icon_prefix" class="active">下单时间</label>
 		</div>
 		<div class="input-field col s12">
 			<i class="material-icons prefix">cloud_circle</i>
 			<label for="icon_prefix" class="active">外卖平台</label>
-			<span style="margin-left: 3rem;line-height:3rem;height:3rem;">{{form.platformName}}</span>
+			<span>{{form.platformName}}</span>
 			<a href="javascript:" class="collection-item" ng-click="clickme()"><span class="new badge">选择</span></a>
-			<!-- Modal Trigger -->
-			<!-- Modal Structure -->
 			<div id="modal1" class="modal bottom-sheet">
 				<div class="modal-content">
 					<input name="group1" type="radio" id="test1" ng-click="selectPlatform(1, '百度外卖')" />
@@ -133,7 +115,7 @@
 			<td>{{food.food}}</td>
 			<td>{{food.num}}</td>
 			<td>￥{{food.price}}</td>
-			<td><i style="color:red" class="material-icons prefix" ng-click="removeFood($index)">clear</i></td>
+			<td><i class="material-icons prefix" ng-click="removeFood($index)">clear</i></td>
 		  </tr>
 		  </tbody>
 
@@ -141,8 +123,8 @@
 	  </div>          
 	</div>
 </div>
-<div class="row last" style="text-align: center;padding-top:1rem;">
-<div class="row" style="text-align: center;">
+<div class="row last">
+<div class="row">
 	<button class="btn-large waves-effect waves-light" ng-click="addFood()">&nbsp;&nbsp;点 菜&nbsp;&nbsp;</button>&nbsp;&nbsp;
 	<button class="btn-large waves-effect waves-light" ng-click="saveFoodAll()">&nbsp;&nbsp;约 单&nbsp;&nbsp;</button>
 </div>        
