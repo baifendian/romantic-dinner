@@ -8,4 +8,4 @@
 
 **clone代码**
 
- >  `git clone https://github.com/jiangtl/edmp.git`
+ >  `git clone https://github.com/baifendian/romantic-dinner.git`
