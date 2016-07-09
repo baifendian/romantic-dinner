@@ -1,0 +1,32 @@
+<div class="navbar-fixed">
+	<nav>
+	  <div class="nav-wrapper head">
+		<a href="javascript:" class="brand-logo left">
+			<img class="logo" src="./images/logo.png"/>
+		</a>
+		<div style="text-align: center;font-size:1.3rem;">首页</div>
+	  </div>
+	</nav>
+</div>
+<div class="col s12 m7">
+  <div class="card" ng-repeat="order in list" ng-click="goOrderinfo(order)" style="border-bottom:1px solid #dfdfdf">
+	<div class="card-content">		
+		<div style="float:left;">
+			<div class="title" style="font-size: 1.21rem;">{{order.shop}}</div>
+			<div ng-show="order.persons<=1" class="sub-title">{{order.user_name}}发起拼单，召唤小伙伴加入</div>
+			<div ng-show="order.persons>1" class="sub-title">{{order.user_name}}约到<span style="color:#c43b61">{{order.persons-1}}</span>位小伙伴，立减<span style="color:#c43b61">{{order.save_money}}</span>元</div>
+		</div>
+		<a href="#/orderinfo/{{order.id}}" class="secondary-content">
+			<i class="material-icons" style="font-size:36px;vertical-align:middle;" >keyboard_arrow_right</i>
+		</a>
+	</div>
+  </div>
+</div>
+<div class="last"></div>
+<div class="fixed-action-btn" style="bottom: 13px;right: 13px;z-index: 9998;width: 75px;height: 75px;background-color: #d75a7c;border-radius: 50%;text-align: center;vertical-align: middle;">
+</div>
+<div class="fixed-action-btn" style="bottom: 18px; right: 18px;z-index:9999">
+	<a href="#/startup" class="btn-floating btn-large waves-effect" style="background-color:#23b3ad;font-size:1.3rem;font-family:'微软雅黑';">
+		发起
+	</a>
+</div>

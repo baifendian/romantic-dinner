@@ -1,0 +1,15 @@
+{
+	"code" : 1,
+	"msg" : "",
+	"data" : {
+		"id": 1,
+		"order_id": 1,
+		"name": "金手勺",
+		"platform": "饿了么",
+		"step_fee": 20,
+		"outside_fee": 5,
+		"package_fee": 1,
+		"order_time": "12:00",
+		"coupon": "20-5、30-8、40-12、50-20、100-40"
+	}
+}

@@ -1,0 +1,165 @@
+<div class="navbar-fixed">
+	<nav>
+	  <div class="nav-wrapper head">
+		<a href="javascript:" class="brand-logo left"><img class="logo" src="./images/logo.png"/></a>
+		<div style="text-align: center;font-size:1.3rem;">拼单</div>
+		<ul class="right" style="position: absolute;top: 0px;right: 0px;">
+		  <li><a href="#/home">返回</a></li>
+		</ul>
+	  </div>
+	</nav>
+</div>
+<div class="row">
+    <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a href="#test1" ng-click="showOrderInfo()">拼单详情</a></li>
+      <li class="tab col s3 "><a href="#test3" ng-click="showOrderInfo()">分单结果</a></li>
+    </ul>
+    </div>
+    <div id="test1" class="col s12">
+			<ul class="collapsible" data-collapsible="expandable">
+		     <li>
+				<div class="collapsible-header active" style="color:#ee6e73;">
+				<i class="material-icons prefix" style="margin-right: 0px">home</i>{{shop.shop}}</div>
+				<div class="collapsible-body">
+					<div class="row" style="margin-bottom:5px;">
+						<div class="col s12" style="margin-top: 1rem;">
+						  <div class="row margin0">
+							<div class="input-field col s6">
+							  <input readonly type="text" ng-model="shop.platform">
+							  <label for="disabled" class="active">外卖平台</label>
+							</div>
+							<div class="input-field col s6">
+							  <input readonly type="text" ng-model="shop.order_time">
+							  <label for="disabled" class="active">下单时间</label>
+							</div>
+						  </div>
+						  <!--
+						  <div class="row margin0">
+							<div class="input-field col s6">
+							  <input readonly type="text" ng-model="shop.step_fee">
+							  <label for="disabled" class="active">起送费（元）</label>
+							</div>
+							<div class="input-field col s6">
+							  <input readonly type="text" ng-model="shop.outside_fee">
+							  <label for="disabled" class="active">外送费（元）</label>
+							</div>
+						  </div>					
+						  <div class="row margin0">
+							<div class="input-field col s6">
+							  <input readonly type="text" ng-model="shop.user_name">
+							  <label for="disabled" class="active">发起人</label>
+							</div>
+							<div class="input-field col s6">
+							  <input readonly type="text" ng-model="shop.order_time">
+							  <label for="disabled" class="active">下单时间</label>
+							</div>
+						  </div>
+						  -->
+						  <div class="row margin0">
+							<div class="input-field col s12">
+							  <input readonly type="text" ng-model="shop.coupons">
+							  <label for="disabled" class="active">满减优惠</label>
+							</div>
+						  </div>
+						</div>
+					</div>
+				</div>
+		     </li>
+		     <li>
+		       <div class="collapsible-header active" style="color:#ee6e73;">
+			   <i class="material-icons prefix" style="margin-right:0px;">people</i>小伙伴拼单信息</div>
+			   <div class="collapsible-body">
+					<div class="row">
+					  <div class="col s12">
+						<table>
+						  <thead>
+						  <tr>
+							<th data-field="id">姓名</th>
+							<th data-field="name">餐费</th>
+							<th data-field="name">立减</th>
+							<th data-field="price">实付</th>
+						  </tr>
+						  </thead>
+						  <tbody>
+						  <tr ng-repeat="person in personList" style="{{$last ? 'border-bottom: 1px solid #d0d0d0;' : ''}}">
+							<td><span style="{{loginName == person.name? 'color:#23b3ad' : ''}}">{{person.name}}</span></td>
+							<td>￥{{person.price}}</td>
+							<td><span style="color:#c43b61">￥{{((person.price/totalMoney*cheaps)-(shop.outside_fee * orderList.length/personList.length)).toFixed(1)}}</span></td>
+							<td>￥{{(person.price - ((person.price/totalMoney*cheaps)-(shop.outside_fee * orderList.length/personList.length))).toFixed(1)}}</td>
+							<td>
+								<i class="material-icons" style="vertical-align:middle;" ><a style="color:#23b3ad" href="javascript:">sms</a></i>&nbsp;&nbsp;
+								<i class="material-icons" style="vertical-align:middle;" ><a style="color:#23b3ad" href="tel:18640037050">phone</a></i>
+							</td>
+						  </tr>
+						  <tr>
+							<td>合计</td>
+							<td>￥{{totalMoney}}</td>
+							<td><span style="color:#c43b61">￥{{cheaps-shop.outside_fee * orderList.length}}</span></td>
+							<td>￥{{totalMoney+shop.outside_fee * orderList.length-cheaps}}</td>
+							<td></td>
+						  </tr>
+						  </tbody>
+
+						</table>
+					  </div>          
+					</div>
+					<div class="row" ng-show="isCumpute">
+					  <div class="col s12" style="text-align:center">
+							<div class="progress">
+								<div class="indeterminate"></div>
+							</div>
+							玩命计算中...
+						</div>
+					</div>
+			   </div>
+		     </li>
+		   </ul>
+		   
+	</div>
+    <div id="test3" class="col s12">
+		<ul class="collapsible" data-collapsible="expandable">
+		 <li ng-repeat="order1 in orderList">
+			<div class="collapsible-header active" style="color:#ee6e73;">
+			<i class="add"></i>第 {{$index+1}} 单 [{{order1.prom}}-{{order1.cheap}}]
+			</div>
+			<div class="collapsible-body" style="display:block">
+				<div class="row">
+				  <div class="col s12">
+					<table>
+					  <thead>
+					  <tr>
+						<th>菜品</th>						
+						<th>单价</th>
+						<th>份数</th>
+					  </tr>
+					  </thead>
+					  <tbody>
+					  <tr ng-repeat="food in order1.foods">
+						<td>{{food.food}}</td>
+						<td>{{food.price}}</td>
+						<td>{{food.num}}</td>
+					  </tr>
+					  </tbody>
+					</table>
+				  </div>          
+				</div>
+			</div>
+		 </li>
+		 
+	   </ul>
+	
+	</div>
+  </div>
+<div class="last"></div>
+<div class="fixed-action-btn" style="bottom: 13px;right: 13px;z-index: 9998;width: 75px;height: 75px;background-color: #d75a7c;border-radius: 50%;text-align: center;vertical-align: middle;">
+</div>
+<div class="fixed-action-btn" style="bottom: 18px; right: 18px;z-index:9999">
+	<a href="#/order/{{orderId}}" class="btn-floating btn-large waves-effect" style="background-color:#23b3ad;font-size:1.3rem;font-family:'微软雅黑';">
+		拼单
+	</a>
+</div>
+
+        
+
+        

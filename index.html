@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="dinner">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>约饭</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+	<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+	<style>
+	.head {
+		width: 414px;
+		background-size: 100%;
+		background-image: url(./images/head.png);
+	}
+	.logo {
+		height:1.85rem;
+		width:5rem;
+		background-size: 100%;
+		margin-left: 1rem;
+		vertical-align: middle;
+	}
+	.page-footer{
+		bottom: 0px;
+		position: fixed;
+		width: 414px;
+		padding-top: 0;
+		background-size: 100%;
+		background-image: url(./images/footer.png);
+	}
+	.card {
+		margin: 0;
+	}
+	.card .card-content{
+		height: 6rem;
+	}
+	.card .title {
+		font-size: 1.2rem;
+		color: #505050;
+	}
+	.card .sub-title {
+		font-size: 0.8rem;
+		color: #7d7d7d;
+		margin-top: 5px;
+	}
+	.secondary-content {
+		height: 48px;
+		line-height: 48px;
+	}
+	.last {
+		margin-bottom: 5rem;
+	}
+	.margin0 {
+		margin: 0px;
+	}
+	@media (min-width: 320px){
+		.head {
+			width: 320px;
+			background-size: 100%;
+		}
+		.page-footer{
+			width: 375px;
+		}
+	}
+	@media (min-width: 350px){
+		.head {
+			width: 375px;
+			background-size: 100%;
+		}
+		.page-footer {
+			width: 375px;
+			background-size: 100%;
+		}
+	}
+	@media (min-width: 400px){
+		.head {
+			width: 414px;
+			background-size: 100%;
+		}
+		.page-footer {
+			width: 414px;
+			background-size: 100%;
+		}
+	}
+	@media (min-width: 768px){
+		.head {
+			width:100%;
+		}
+		.page-footer {
+			width:100%;
+		}
+	}	
+	</style>
+	<script type='application/javascript' src='js/fastclick.js'></script>
+    <!-- angularjs js -->
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/materialize.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+    <script src="js/directive.js"></script>    
+	<script src="js/filter.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body>	
+	<div ng-view></div>
+	<footer class="page-footer" style="padding-top:0px; z-index:999">	
+	  <div class="footer-copyright">
+		<div class="container">
+			<div style="font-size:10px;line-height:15px;margin-top:11px;">青年司机队</div>
+			<div style="font-size:10px;line-height:15px;">© 2016 Copyright 百分点</div>			
+		</div>
+	  </div>
+	</footer>
+  </body>
+</html>

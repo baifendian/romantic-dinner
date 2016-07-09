@@ -1,0 +1,35 @@
+{
+	"code" : 1,
+	"msg" : "",
+	"data" : [{
+		"id": 1,
+		"name": "金手勺",
+		"person": 6,
+		"coupon": 40,
+		"adduser": "蒋腾龙"
+	},{
+		"id": 2,
+		"name": "金顺紫菜包饭",
+		"person": 2,
+		"coupon": 15,
+		"adduser": "刘洋"
+	},{
+		"id": 3,
+		"name": "吉野家",
+		"person": 1,
+		"coupon": 8,
+		"adduser": "韩旭"
+	},{
+		"id": 4,
+		"name": "杨国福麻辣烫",
+		"person": 4,
+		"coupon": 20,
+		"adduser": "陆攀"
+	},{
+		"id": 5,
+		"name": "杨铭宇黄焖鸡",
+		"person": 5,
+		"coupon": 30,
+		"adduser": "张萌"
+	}]
+}
