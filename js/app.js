@@ -20,15 +20,7 @@ app.config(function($routeProvider, $httpProvider) {
       controller: 'StartupCtrl',
       templateUrl: './templates/startup.html'
     })
-    .when('/myorder', {
-      controller: 'MyOrderCtrl',
-      templateUrl: './templates/myorder.html'
-    })
     .when('/order/:id', {
-      controller: 'OrderCtrl',
-      templateUrl: './templates/order.html'
-    })
-    .when('/order/:id/:username', {
       controller: 'OrderCtrl',
       templateUrl: './templates/order.html'
     })
